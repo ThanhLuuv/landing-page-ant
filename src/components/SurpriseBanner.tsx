@@ -5,15 +5,13 @@ export default function SurpriseBanner() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    // Kiểm tra xem đã hiển thị banner chưa trong session này
-    const hasShownBanner = sessionStorage.getItem('surpriseBannerShown');
+    // Kiểm tra xem đã click CTA chưa trong session này
+    const hasClickedCTA = sessionStorage.getItem('surpriseBannerCTAClicked');
     
-    if (!hasShownBanner) {
+    if (!hasClickedCTA) {
       // Hiển thị sau 2 giây khi load trang
       const timer = setTimeout(() => {
         setShow(true);
-        // Đánh dấu đã hiển thị trong session này
-        sessionStorage.setItem('surpriseBannerShown', 'true');
       }, 2000);
       
       return () => clearTimeout(timer);
@@ -26,7 +24,13 @@ export default function SurpriseBanner() {
     if (formElement) {
       formElement.scrollIntoView({ behavior: 'smooth' });
     }
-    // Đóng banner sau khi click CTA
+    // Đánh dấu đã click CTA và đóng banner
+    sessionStorage.setItem('surpriseBannerCTAClicked', 'true');
+    setShow(false);
+  };
+
+  const handleClose = () => {
+    // Chỉ đóng banner, không lưu trạng thái
     setShow(false);
   };
 
@@ -51,7 +55,7 @@ export default function SurpriseBanner() {
         </button>
         
         <button
-          onClick={() => setShow(false)}
+          onClick={handleClose}
           className="surprise-banner-close"
         >
           ✕

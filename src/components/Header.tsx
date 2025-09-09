@@ -11,11 +11,10 @@ export default function Header() {
       {/* PROMO BAR */}
       <div className="promo-bar promo-bar--angled">
         <div className="container promo-inner">
-          <span className="promo-badge badge--pulse">Ưu đãi mở hệ</span>
           <span className="promo-text">
             Học thử 1-1 với giáo viên chất lượng <strong>miễn phí</strong>
           </span>
-          <a href="#dangky" className="promo-cta">
+          <a href="#dangky" className="promo-cta promo-badge badge--pulse">
             Đăng ký ngay <FiArrowRight size={16} />
           </a>
         </div>

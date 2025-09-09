@@ -39,12 +39,12 @@ html, body { overflow-x:hidden }
 .badge--pulse{position:relative}
 .badge--pulse:after{content:""; position:absolute; inset:-6px; border-radius:999px; border:2px solid rgba(255,255,255,.65); animation:pulse 1.5s infinite}
 @keyframes pulse{0%{opacity:.8; transform:scale(.95)}100%{opacity:0; transform:scale(1.25)}}
-.promo-cta{display:inline-flex; align-items:center; gap:8px; color:#fff; text-decoration:none; border:1px solid rgba(255,255,255,.5); padding:6px 10px; border-radius:10px}
+.promo-cta{display:inline-flex; align-items:center; gap:8px; color:promo-cta; text-decoration:none; border:1px solid rgba(255,255,255,.5); padding:6px 10px; border-radius:10px}
 
 /* Hero */
-.hero{background:linear-gradient(135deg, var(--brand), var(--brand-700)); color:#fff; position:relative; overflow:hidden}
-.hero .container{display:grid; grid-template-columns:1.1fr .9fr; gap:32px; align-items:center; position:relative; z-index:1}
-@media (max-width: 920px){.hero .container{grid-template-columns:1fr}}
+.hero{background:linear-gradient(135deg, var(--brand), var(--brand-700)); color:#fff; position:relative; overflow:hidden; min-height: 100vh}
+.hero .container{display:grid; grid-template-columns:1.1fr .9fr; gap:32px; align-items:center; position:relative; z-index:1; min-height: 100vh}
+@media (max-width: 920px){.hero .container{grid-template-columns:1fr; min-height: auto; padding: 40px 0}}
 
 .blob{position:absolute; border-radius:50%; filter:blur(10px); opacity:.35}
 .blob--a{width:420px; height:420px; background:radial-gradient(circle at 30% 30%, #90c2ff, transparent 60%), radial-gradient(circle at 70% 70%, #aee, transparent 65%); left:-120px; top:-80px}
@@ -519,6 +519,266 @@ footer{color:#d3def0; font-size:14px; padding:12px !important}
   text-decoration: underline;
 }
 
+/* Small mobile responsive */
+@media (max-width: 480px) {
+  .section {
+    padding: 20px 12px;
+  }
+
+  .container {
+    padding: 0 12px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .cta-title {
+    font-size: 20px;
+  }
+
+  .form-card--xl {
+    padding: 12px;
+  }
+
+  /* CTA small mobile */
+  .cta {
+    min-height: auto;
+    padding: 20px 0;
+  }
+
+  .cta-title {
+    font-size: 18px;
+    line-height: 1.3;
+    margin: 8px 0 10px;
+  }
+
+  .cta-sub {
+    font-size: 14px;
+    margin: 6px 0 12px;
+  }
+
+  .cta-points li {
+    font-size: 13px;
+    margin: 4px 0;
+  }
+
+  .form-card--xl {
+    padding: 12px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .input--lg {
+    height: 42px;
+    font-size: 15px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .input {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .btn--block {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  .surprise-banner {
+    bottom: 12px;
+    right: 12px;
+    left: 12px;
+  }
+
+  /* Promo bar small mobile */
+  .promo-inner {
+    gap: 6px;
+  }
+
+  .promo-text {
+    font-size: 13px;
+  }
+
+  .promo-cta {
+    font-size: 13px;
+    color: var(--brand);
+    padding: 5px 10px;
+  }
+
+  /* Hero small mobile */
+  .hero {
+    min-height: auto;
+    padding: 16px 0;
+  }
+
+  .hero .container {
+    min-height: auto;
+    padding: 16px 0;
+  }
+
+  h1 {
+    font-size: 20px;
+    line-height: 1.3;
+    margin: 8px 0 10px;
+  }
+
+  .lead {
+    font-size: 14px;
+    margin: 6px 0;
+  }
+
+  .card.ticket {
+    padding: 10px;
+    width: 100%;
+    max-width: 280px;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+
+  .demo-banner__head {
+    font-size: 14px;
+  }
+
+  .demo-banner__body {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .price {
+    font-size: 20px;
+  }
+
+  .caption {
+    font-size: 11px;
+  }
+
+  /* Surprise banner small mobile */
+  .surprise-banner-description {
+    font-size: 13px;
+  }
+
+  .surprise-banner-cta {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .ant-image {
+    width: 50px;
+    height: 50px;
+    filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.8)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.15));
+  }
+
+  /* Decor shapes small mobile */
+  .decor {
+    display: none;
+  }
+
+  .blob {
+    display: none;
+  }
+
+  /* Ribbon small mobile */
+  .ribbon {
+    font-size: 11px;
+    padding: 3px 6px;
+  }
+
+  /* Icon dots small mobile */
+  .icon-dot {
+    width: 22px;
+    height: 22px;
+  }
+
+  /* Ensure all content is visible small mobile */
+  .hero-copy {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .visual {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .proof {
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 12px 0;
+  }
+
+  .price-strip {
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin: 12px 0;
+  }
+
+  .bullets {
+    margin: 12px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .actions {
+    margin: 12px 0;
+  }
+
+  .chip {
+    width: 70px;
+    height: 70px;
+  }
+
+  .chip strong {
+    font-size: 12px;
+  }
+
+  .chip span {
+    font-size: 10px;
+  }
+
+  .pill {
+    font-size: 12px;
+    padding: 4px 6px;
+  }
+
+  /* Prevent overflow on small mobile */
+  .section {
+    padding: 16px 8px;
+  }
+
+  .container {
+    padding: 0 8px;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .hero-grid {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .cta-wrap {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .benefits {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}
+
 /* Mobile responsive */
 @media (max-width: 640px) {
   .modal-content {
@@ -540,6 +800,627 @@ footer{color:#d3def0; font-size:14px; padding:12px !important}
   
   .policy-section h3 {
     font-size: 16px;
+  }
+
+  .contact-info {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .contact-item {
+    font-size: 14px;
+  }
+
+  /* Landing page mobile optimizations */
+  .section {
+    padding: 20px 12px;
+  }
+
+  .container {
+    padding: 0 12px;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* Promo bar mobile */
+  .promo-bar {
+    padding: 8px 0;
+  }
+
+  .promo-inner {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .promo-text {
+    font-size: 14px;
+  }
+
+  .promo-cta {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  /* Hero section mobile */
+  .hero {
+    min-height: auto;
+    padding: 20px 0;
+  }
+
+  .hero .container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    text-align: center;
+    min-height: auto;
+    padding: 20px 0;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+    line-height: 1.3;
+    margin: 10px 0 12px;
+  }
+
+  .lead {
+    font-size: 15px;
+    margin: 8px 0;
+  }
+
+  /* Visual card mobile */
+  .visual {
+    order: -1;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .card.ticket {
+    padding: 12px;
+    width: 100%;
+    max-width: 320px;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+
+  .demo-banner__head {
+    font-size: 16px;
+  }
+
+  .demo-banner__body {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .price {
+    font-size: 24px;
+  }
+
+  .caption {
+    font-size: 12px;
+  }
+
+  .list--check {
+    font-size: 14px;
+  }
+
+  .trust-logos {
+    justify-content: center;
+  }
+
+  /* Benefits mobile */
+  .benefits {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .benefit-card {
+    padding: 16px;
+  }
+
+  .benefit-card h3 {
+    font-size: 16px;
+  }
+
+  .benefit-card p {
+    font-size: 14px;
+  }
+
+  /* CTA section mobile */
+  .cta {
+    min-height: auto;
+    padding: 30px 0;
+  }
+
+  .cta-wrap {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .cta-title {
+    font-size: 22px;
+    line-height: 1.3;
+    margin: 10px 0 12px;
+  }
+
+  .cta-sub {
+    font-size: 15px;
+    margin: 8px 0 16px;
+  }
+
+  .cta-points {
+    margin: 12px 0 20px;
+  }
+
+  .cta-points li {
+    font-size: 14px;
+    margin: 6px 0;
+  }
+
+  .form-card--xl {
+    padding: 16px;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .grid-2--wide {
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .input--lg {
+    height: 44px;
+    font-size: 16px;
+    margin-bottom: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .input {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .form-actions--stack {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  .agree {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .btn--block {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 15px;
+  }
+
+  /* Footer mobile */
+  .footer-inner {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  /* Surprise banner mobile */
+  .surprise-banner {
+    bottom: 16px;
+    right: 16px;
+    left: 16px;
+  }
+
+  .surprise-banner-message {
+    max-width: none;
+    width: 100%;
+  }
+
+  .surprise-banner-ant {
+    align-self: flex-end;
+  }
+
+  .ant-image {
+    width: 60px;
+    height: 60px;
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.8)) drop-shadow(0 3px 8px rgba(0, 0, 0, 0.15));
+  }
+
+  .surprise-banner-description {
+    font-size: 14px;
+  }
+
+  .surprise-banner-cta {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  /* Social proof mobile */
+  .proof {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .chip {
+    width: 70px;
+    height: 70px;
+  }
+
+  .chip strong {
+    font-size: 14px;
+  }
+
+  .chip span {
+    font-size: 11px;
+  }
+
+  /* Price strip mobile */
+  .price-strip {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .pill {
+    font-size: 13px;
+    padding: 5px 8px;
+  }
+
+  /* Bullets mobile */
+  .bullets {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  /* Actions mobile */
+  .actions {
+    justify-content: center;
+  }
+
+  .btn {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  /* Ensure all content is visible */
+  .hero-copy {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .visual {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .proof {
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 16px 0;
+  }
+
+  .price-strip {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin: 16px 0;
+  }
+
+  .bullets {
+    margin: 16px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .actions {
+    margin: 16px 0;
+  }
+
+  /* Prevent overflow on mobile */
+  * {
+    box-sizing: border-box;
+  }
+
+  .hero-grid {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .cta-wrap {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .benefits {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Decor shapes mobile */
+  .decor {
+    display: none;
+  }
+
+  .blob {
+    display: none;
+  }
+
+  /* Ribbon mobile */
+  .ribbon {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  /* Icon dots mobile */
+  .icon-dot {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Tablet responsive */
+@media (max-width: 768px) and (min-width: 641px) {
+  .section {
+    padding: 32px 20px;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .hero .container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .benefits {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .cta {
+    min-height: auto;
+    padding: 40px 0;
+  }
+
+  .cta-wrap {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .cta-title {
+    font-size: 26px;
+    line-height: 1.2;
+    margin: 12px 0 16px;
+  }
+
+  .cta-sub {
+    font-size: 16px;
+    margin: 10px 0 18px;
+  }
+
+  .cta-points li {
+    font-size: 15px;
+    margin: 8px 0;
+  }
+
+  .price-strip {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 18px 0;
+  }
+
+  .form-card--xl {
+    padding: 20px;
+  }
+
+  .input--lg {
+    height: 46px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .input {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .btn--block {
+    padding: 14px 18px;
+    font-size: 16px;
+  }
+
+  /* Promo bar tablet */
+  .promo-inner {
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .promo-text {
+    font-size: 15px;
+  }
+
+  /* Hero tablet */
+  .hero {
+    min-height: auto;
+    padding: 30px 0;
+  }
+
+  .hero .container {
+    min-height: auto;
+    padding: 30px 0;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  h1 {
+    font-size: 32px;
+    line-height: 1.2;
+    margin: 12px 0 16px;
+  }
+
+  .lead {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+
+  /* Visual card tablet */
+  .visual {
+    order: -1;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .card.ticket {
+    padding: 16px;
+    width: 100%;
+    max-width: 360px;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+
+  .demo-banner__head {
+    font-size: 18px;
+  }
+
+  .demo-banner__body {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .price {
+    font-size: 28px;
+  }
+
+  .caption {
+    font-size: 13px;
+  }
+
+  .list--check {
+    font-size: 15px;
+  }
+
+  .bullets {
+    margin: 18px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* Surprise banner tablet */
+  .surprise-banner {
+    bottom: 20px;
+    right: 20px;
+    left: auto;
+  }
+
+  .surprise-banner-message {
+    max-width: 300px;
+  }
+
+  .surprise-banner-description {
+    font-size: 15px;
+  }
+
+  .surprise-banner-cta {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  .surprise-banner-ant {
+    align-self: flex-end;
+  }
+
+  .ant-image {
+    width: 70px;
+    height: 70px;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8)) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.15));
+  }
+
+  /* Decor shapes tablet */
+  .decor {
+    display: none;
+  }
+
+  .blob {
+    display: none;
+  }
+
+  /* Ribbon tablet */
+  .ribbon {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+
+  /* Icon dots tablet */
+  .icon-dot {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+/* ===== MOBILE OVERFLOW PREVENTION ===== */
+@media (max-width: 768px) {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .hero .container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .cta .container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .section {
+    width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -703,6 +1584,7 @@ footer{color:#d3def0; font-size:14px; padding:12px !important}
   animation: antWave 3s ease-in-out infinite;
   cursor: pointer;
   transition: transform 0.2s ease;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.8)) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
 }
 
 .ant-image:hover {
