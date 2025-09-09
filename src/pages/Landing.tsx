@@ -5,6 +5,7 @@ import { FiSend, FiZap, FiShield, FiClock } from 'react-icons/fi'
 import { toast, Toaster } from 'react-hot-toast'
 import Header from '../components/Header'
 import PolicyModal from '../components/PolicyModal'
+import SurpriseBanner from '../components/SurpriseBanner'
 import { submitViaHiddenForm } from '../utils/googleForm'
 
 export default function Landing() {
@@ -74,7 +75,6 @@ export default function Landing() {
       {/* LỢI ÍCH NỔI BẬT — professional cards */}
       <section className="section">
         <div className="container">
-          <h2 className="sec-title">Lợi ích nổi bật</h2>
           <div className="benefits benefits--cards benefits--notes">
             <article className="benefit-card note">
               <div className="benefit-icon"><FiZap size={18} /></div>
@@ -258,6 +258,9 @@ export default function Landing() {
           },
         }}
       />
+
+      {/* SURPRISE BANNER */}
+      <SurpriseBanner />
     </>
   )
 }
