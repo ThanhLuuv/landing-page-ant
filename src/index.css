@@ -90,8 +90,13 @@ h1{font-size:42px; line-height:1.15; margin:14px 0 16px; white-space: nowrap}
 .visual{position:relative; isolation:isolate}
 .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow)}
 .ticket{padding:14px; position:relative; clip-path:polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 18px 100%, 0 calc(100% - 18px))}
-.ribbon{position:absolute; top:10px; width:fit-content; right:100%; background:#ffb703; color:#3b2f00; font-weight:800; padding:6px 12px; border-radius:999px; box-shadow:var(--shadow); z-index:3}
+.ribbon{position:absolute; top:10px; width:fit-content; right:100%; background:#ffb703; color:#3b2f00; font-weight:800; padding:6px 12px; border-radius:8px; box-shadow:var(--shadow); z-index:3; white-space: nowrap}
 .ribbon--arrow:after{content:""; position:absolute; right:-10px; top:50%; transform:translateY(-50%); border-left:10px solid #ffb703; border-top:8px solid transparent; border-bottom:8px solid transparent}
+@media (max-width: 768px) {
+  .ribbon--arrow:after {
+    display: none;
+  }
+}
 
 .demo-banner{border-radius:12px; padding:16px}
 .demo-banner--radial{background:radial-gradient(120% 120% at 10% 0%, #dfefff 0%, #c8dcff 40%, #bcd8ff 60%, #cfe3ff 100%)}
@@ -692,6 +697,11 @@ footer{color:#d3def0; font-size:14px; padding:12px !important}
   .ribbon {
     font-size: 11px;
     padding: 3px 6px;
+    left: 8px;
+    top: 8px;
+    right: auto;
+    width: auto;
+    white-space: nowrap;
   }
 
   /* Icon dots small mobile */
@@ -1200,6 +1210,11 @@ footer{color:#d3def0; font-size:14px; padding:12px !important}
   .ribbon {
     font-size: 12px;
     padding: 4px 8px;
+    left: 10px;
+    top: 10px;
+    right: auto;
+    width: auto;
+    white-space: nowrap;
   }
 
   /* Icon dots mobile */
@@ -1437,6 +1452,11 @@ footer{color:#d3def0; font-size:14px; padding:12px !important}
   .ribbon {
     font-size: 13px;
     padding: 5px 10px;
+    left: 12px;
+    top: 12px;
+    right: auto;
+    width: auto;
+    white-space: nowrap;
   }
 
   /* Icon dots tablet */

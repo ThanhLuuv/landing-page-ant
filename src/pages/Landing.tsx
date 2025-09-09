@@ -5,7 +5,6 @@ import { FiSend, FiZap, FiShield, FiClock } from 'react-icons/fi'
 import { toast, Toaster } from 'react-hot-toast'
 import Header from '../components/Header'
 import PolicyModal from '../components/PolicyModal'
-import SurpriseBanner from '../components/SurpriseBanner'
 import { submitViaHiddenForm } from '../utils/googleForm'
 
 export default function Landing() {
@@ -260,8 +259,6 @@ export default function Landing() {
         }}
       />
 
-      {/* SURPRISE BANNER */}
-      <SurpriseBanner />
     </>
   )
 }
