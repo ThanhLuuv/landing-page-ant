@@ -127,7 +127,8 @@ export default function Landing() {
 
         <div className="container cta-wrap">
             <div className="cta-head">
-            <h2 id="cta-title" className="cta-title">Sẵn sàng bắt đầu với</h2> <br /> <h2 id="cta-title" className="cta-title text-accent"><strong>80–90k/buổi</strong></h2>
+            <h2 id="cta-title" className="cta-title">Sẵn sàng bắt đầu với</h2>
+            <h2 id="cta-title" className="cta-title text-accent"><strong>80–90k/buổi</strong></h2>
             <p className="cta-sub">
                 Điền thông tin, chúng tôi gợi ý giáo viên phù hợp và xếp lịch học thử trong 24h.
             </p>
