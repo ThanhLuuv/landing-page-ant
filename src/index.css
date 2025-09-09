@@ -1548,6 +1548,16 @@ footer{color:#d3def0; font-size:14px; padding:12px !important}
   box-shadow: var(--shadow);
 }
 
+/* Improve contrast for ghost buttons in teachers section */
+#danhsach-giaovien .btn--ghost{
+  background: transparent !important;
+  color: var(--brand) !important;
+  border: 1px solid var(--brand) !important;
+}
+#danhsach-giaovien .btn--ghost:hover{
+  background: #f7faff !important;
+}
+
 /* ===== SURPRISE BANNER STYLES ===== */
 .surprise-banner {
   position: fixed;
@@ -1745,3 +1755,47 @@ footer{color:#d3def0; font-size:14px; padding:12px !important}
     transform: translateY(-5px);
   }
 }
+
+/* ===== Teacher Grid/Card ===== */
+.teacher-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+@media (max-width: 1024px) { .teacher-grid { grid-template-columns: repeat(2, 1fr) } }
+@media (max-width: 640px) { .teacher-grid { grid-template-columns: 1fr } }
+
+.teacher-card {
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--card);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.teacher-card__header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 12px;
+  align-items: center;
+}
+.teacher-card__avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #f0f4ff;
+  border: 1px solid #e3ebff;
+}
+.teacher-card__avatar img { width: 100%; height: 100%; object-fit: cover }
+.teacher-card__title .t-name { font-weight: 800 }
+.teacher-card__price { background: #fff7e6; color: #8a4b00; border-color: #ffe1b5 }
+.teacher-card__meta { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; color: #3a556f; font-size: 13px }
+.teacher-card__chip { display: inline-flex; align-items: center; gap: 6px; padding: 4px 8px; border-radius: 999px; background: #f1f6ff; color: var(--brand); border: 1px solid #dbe8ff }
+.teacher-card__chip.link { background: #eef6ff; color: var(--brand) }
+.teacher-card__tags { display: flex; flex-wrap: wrap; gap: 8px }
+.teacher-card__note { margin: 4px 0 0; color: #445770; font-size: 14px }
+.teacher-card__contact { display: flex; gap: 14px; flex-wrap: wrap; color: #5a6c82; font-size: 13px }
+.teacher-card__actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 6px }

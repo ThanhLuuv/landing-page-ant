@@ -1,15 +1,17 @@
 import type { FormEvent } from 'react'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import '../index.css'
 import { FiSend, FiZap, FiShield, FiClock } from 'react-icons/fi'
 import { toast, Toaster } from 'react-hot-toast'
 import Header from '../components/Header'
+// import TeacherList from '../components/TeacherList'
 import PolicyModal from '../components/PolicyModal'
 import { submitViaHiddenForm } from '../utils/googleForm'
 
 export default function Landing() {
   const [isPolicyModalOpen, setIsPolicyModalOpen] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const nameInputRef = useRef<HTMLInputElement | null>(null)
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -69,7 +71,16 @@ export default function Landing() {
 
   return (
     <>
-      <Header />
+      <Header onCtaClick={() => {
+        const target = document.getElementById('dangky')
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }
+        // focus vào input đầu tiên
+        requestAnimationFrame(() => {
+          nameInputRef.current?.focus()
+        })
+      }} />
 
       {/* LỢI ÍCH NỔI BẬT — professional cards */}
       <section className="section">
@@ -93,6 +104,9 @@ export default function Landing() {
           </div>
         </div>
       </section>
+
+      {/* DANH SÁCH GIÁO VIÊN */}
+      {/* <TeacherList pageSize={10} /> */}
 
       {/* CÁCH HOẠT ĐỘNG — arrow connectors
       <section className="section section--subtle">
@@ -144,7 +158,7 @@ export default function Landing() {
             <input type="hidden" name="utm_campaign" value="trial-1-1" />
 
             <div className="grid-2 grid-2--wide">
-                <input name="name" aria-label="Họ và tên" placeholder="Họ và tên" required className="input input--lg" />
+                <input ref={nameInputRef} name="name" aria-label="Họ và tên" placeholder="Họ và tên" required className="input input--lg" />
                 <input name="phone" type="tel" aria-label="Số điện thoại/Zalo" placeholder="Số điện thoại/Zalo" required className="input input--lg" />
                 <input name="goal" aria-label="Mục tiêu học" placeholder="Mục tiêu (VD: giao tiếp/TOEIC/IELTS/công việc)" className="input input--lg" />
             </div>

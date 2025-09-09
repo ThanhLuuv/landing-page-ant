@@ -1,6 +1,10 @@
 import { FiCheckCircle, FiZap, FiClock, FiArrowRight, FiShield, FiPlayCircle } from 'react-icons/fi'
 
-export default function Header() {
+type HeaderProps = {
+  onCtaClick?: () => void
+}
+
+export default function Header({ onCtaClick }: HeaderProps) {
   return (
     <>
       {/* DECOR SHAPES (global, non-interactive) */}
@@ -14,7 +18,7 @@ export default function Header() {
           <span className="promo-text">
             Học thử 1-1 với giáo viên chất lượng <strong>miễn phí</strong>
           </span>
-          <a href="#dangky" className="promo-cta promo-badge badge--pulse">
+          <a href="#dangky" className="promo-cta promo-badge badge--pulse" onClick={(e) => { e.preventDefault(); onCtaClick?.() }}>
             Đăng ký ngay <FiArrowRight size={16} />
           </a>
         </div>
@@ -61,7 +65,7 @@ export default function Header() {
             </div>
 
             <div className="actions">
-              <a href="#dangky" className="btn">
+              <a href="#dangky" className="btn" onClick={(e) => { e.preventDefault(); onCtaClick?.() }}>
                 Học thử ngay <FiPlayCircle size={18} />
               </a>
             </div>
@@ -85,7 +89,7 @@ export default function Header() {
                     <div className="price">80–90k/buổi</div>
                     <div className="caption">Đặt lịch linh hoạt • Học trước từng buổi</div>
                   </div>
-                  <a className="btn" href="#dangky">Chọn gói này</a>
+                  <a className="btn" href="#dangky" onClick={(e) => { e.preventDefault(); onCtaClick?.() }}>Chọn gói này</a>
                 </div>
               </div>
               <ul className="list--check">
