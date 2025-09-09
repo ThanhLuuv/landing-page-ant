@@ -921,10 +921,30 @@ footer{color:#d3def0; font-size:14px; padding:12px !important}
   .benefits {
     grid-template-columns: 1fr;
     gap: 16px;
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
   }
 
   .benefit-card {
     padding: 16px;
+    transform: none !important;
+    margin: 0;
+  }
+
+  .benefit-card.note {
+    transform: none !important;
+    background: #fffef6;
+  }
+
+  .benefit-card.note:nth-child(2) {
+    background: #f8fff7;
+    transform: none !important;
+  }
+
+  .benefit-card.note:nth-child(3) {
+    background: #f7fbff;
+    transform: none !important;
   }
 
   .benefit-card h3 {
@@ -933,6 +953,16 @@ footer{color:#d3def0; font-size:14px; padding:12px !important}
 
   .benefit-card p {
     font-size: 14px;
+  }
+
+  /* Benefits section mobile */
+  .benefits--notes {
+    perspective: none;
+  }
+
+  .benefit-card.note:before,
+  .benefit-card.note:after {
+    display: none;
   }
 
   /* CTA section mobile */
@@ -1200,6 +1230,26 @@ footer{color:#d3def0; font-size:14px; padding:12px !important}
   .benefits {
     grid-template-columns: 1fr;
     gap: 20px;
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+  }
+
+  .benefit-card {
+    transform: none !important;
+    margin: 0;
+  }
+
+  .benefit-card.note {
+    transform: none !important;
+  }
+
+  .benefit-card.note:nth-child(2) {
+    transform: none !important;
+  }
+
+  .benefit-card.note:nth-child(3) {
+    transform: none !important;
   }
 
   .cta {
