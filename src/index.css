@@ -1543,11 +1543,15 @@ footer{color:#d3def0; font-size:14px; padding:12px !important}
 .surprise-banner.hidden {
   opacity: 0;
   transform: translateY(16px);
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .surprise-banner.visible {
   opacity: 1;
   transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .surprise-banner-message {
