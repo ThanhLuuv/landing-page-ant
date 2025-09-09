@@ -28,7 +28,7 @@ export default function Header() {
         <div className="container hero-grid">
           <div className="hero-copy">
             <h1>
-              Học Tiếng Anh 1-1 theo nhu cầu, <span className="text-accent">80–90k/buổi</span>
+              Học Tiếng Anh 1-1 theo nhu cầu, <br /><span className="text-accent">80–90k/buổi</span>
             </h1>
             <p className="lead">
               Chọn giáo viên phù hợp, đặt lịch nhanh, 
