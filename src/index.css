@@ -16,7 +16,11 @@
 
 html,body{height:100%}
 body{margin:0; font:16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; color:var(--ink); background:var(--bg)}
-html, body { overflow-x:hidden }
+html, body { 
+  overflow-x: hidden;
+  height: auto;
+  min-height: 100vh;
+}
 .text-accent{color:#ffd166}
 
 /* Layout */
@@ -42,8 +46,8 @@ html, body { overflow-x:hidden }
 .promo-cta{display:inline-flex; align-items:center; gap:8px; color:promo-cta; text-decoration:none; border:1px solid rgba(255,255,255,.5); padding:6px 10px; border-radius:10px}
 
 /* Hero */
-.hero{background:linear-gradient(135deg, var(--brand), var(--brand-700)); color:#fff; position:relative; overflow:hidden; min-height: 100vh}
-.hero .container{display:grid; grid-template-columns:1.1fr .9fr; gap:32px; align-items:center; position:relative; z-index:1; min-height: 100vh}
+.hero{background:linear-gradient(135deg, var(--brand), var(--brand-700)); color:#fff; position:relative; overflow:hidden}
+.hero .container{display:grid; grid-template-columns:1.1fr .9fr; gap:32px; align-items:center; position:relative; z-index:1}
 @media (max-width: 920px){.hero .container{grid-template-columns:1fr; min-height: auto; padding: 40px 0}}
 
 .blob{position:absolute; border-radius:50%; filter:blur(10px); opacity:.35}
@@ -1399,6 +1403,13 @@ footer{color:#d3def0; font-size:14px; padding:12px !important}
     overflow-x: hidden;
     width: 100%;
     max-width: 100vw;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  html {
+    overflow-x: hidden;
+    height: auto;
   }
 
   .container {
@@ -1421,6 +1432,18 @@ footer{color:#d3def0; font-size:14px; padding:12px !important}
   .section {
     width: 100%;
     max-width: 100%;
+    min-height: auto;
+    height: auto;
+  }
+
+  .hero {
+    min-height: auto;
+    height: auto;
+  }
+
+  .cta {
+    min-height: auto;
+    height: auto;
   }
 }
 
