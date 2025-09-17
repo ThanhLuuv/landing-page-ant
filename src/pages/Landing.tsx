@@ -49,6 +49,7 @@ export default function Landing() {
       'entry.888789107': data.name || '',
       'entry.1587081785': data.phone || '',
       'entry.2127657389': `${data.goal || ''} | UTM: ${data.utm_source || 'landing'}-${data.utm_campaign || 'trial-1-1'}`,
+      'entry.1950214871': data.feedback || '',
       'submit': 'Submit'
     };
 
@@ -94,12 +95,12 @@ export default function Landing() {
             <article className="benefit-card note">
               <div className="benefit-icon"><FiShield size={18} /></div>
               <h3>Chi phí minh bạch</h3>
-              <p>80–90k/buổi, thanh toán theo từng buổi. Hoàn tiền nếu không phù hợp.</p>
+              <p>từ 80k/buổi, thanh toán theo từng buổi. Hoàn tiền nếu không phù hợp.</p>
             </article>
             <article className="benefit-card note">
               <div className="benefit-icon"><FiClock size={18} /></div>
               <h3>Lịch linh hoạt</h3>
-              <p>Đặt — đổi — huỷ dễ dàng, nhắc lịch tự động. Khớp lịch người đi làm.</p>
+              <p>Đặt — đổi — huỷ dễ dàng. Khớp lịch người đi làm.</p>
             </article>
           </div>
         </div>
@@ -141,14 +142,14 @@ export default function Landing() {
         <div className="container cta-wrap">
             <div className="cta-head">
             <h2 id="cta-title" className="cta-title">Sẵn sàng bắt đầu với</h2>
-            <h2 id="cta-title" className="cta-title text-accent"><strong>80–90k/buổi</strong></h2>
+            <h2 id="cta-title" className="cta-title text-accent"><strong>từ 80k/buổi</strong></h2>
             <p className="cta-sub">
                 Điền thông tin, chúng tôi gợi ý giáo viên phù hợp và xếp lịch học thử trong 24h.
             </p>
             <ul className="cta-points">
                 <li><span className="dot" /> Học 1–1, lịch linh hoạt</li>
                 <li><span className="dot" /> Đổi giáo viên miễn phí</li>
-                <li><span className="dot" /> Hoàn tiền buổi đầu</li>
+                {/* <li><span className="dot" /> Hoàn tiền nếu không phù hợp</li> */}
             </ul>
             </div>
 
@@ -161,6 +162,7 @@ export default function Landing() {
                 <input ref={nameInputRef} name="name" aria-label="Họ và tên" placeholder="Họ và tên" required className="input input--lg" />
                 <input name="phone" type="tel" aria-label="Số điện thoại/Zalo" placeholder="Số điện thoại/Zalo" required className="input input--lg" />
                 <input name="goal" aria-label="Mục tiêu học" placeholder="Mục tiêu (VD: giao tiếp/TOEIC/IELTS/công việc)" className="input input--lg" />
+                <input name="feedback" aria-label="Góp ý/Thắc mắc" placeholder="Góp ý hoặc thắc mắc (tuỳ chọn)" className="input input--lg" />
             </div>
 
             <div className="form-actions form-actions--stack">
@@ -217,7 +219,7 @@ export default function Landing() {
       {/* FOOTER */}
       <footer className="section" style={{ background: '#083668' }}>
         <div className="container footer-inner">
-          <div>© 2025 Antoree — Học Tiếng Anh 1-1</div>
+          <div>© 2025 Antoree — Học tiếng Anh 1-1</div>
         </div>
       </footer>
 
