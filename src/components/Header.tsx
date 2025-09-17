@@ -36,7 +36,7 @@ export default function Header({ onCtaClick }: HeaderProps) {
         <div className="container hero-grid">
           <div className="hero-copy">
             <h1>
-              Học tiếng Anh 1-1 <br />theo nhu cầu, <span className="text-accent">từ 80k/buổi</span>
+              Học tiếng Anh 1-1 theo<br /> nhu cầu, <span className="text-accent">từ 80k/buổi</span>
             </h1>
             <p className="lead">
               Chọn giáo viên phù hợp, đặt lịch nhanh, 

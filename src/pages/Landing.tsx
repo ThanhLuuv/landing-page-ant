@@ -1,5 +1,5 @@
 import type { FormEvent } from 'react'
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import '../index.css'
 import { FiSend, FiZap, FiShield, FiClock } from 'react-icons/fi'
 import { toast, Toaster } from 'react-hot-toast'
@@ -11,6 +11,8 @@ import { submitViaHiddenForm } from '../utils/googleForm'
 export default function Landing() {
   const [isPolicyModalOpen, setIsPolicyModalOpen] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isExitModalOpen, setIsExitModalOpen] = useState(false)
+  const [exitReason, setExitReason] = useState('')
   const nameInputRef = useRef<HTMLInputElement | null>(null)
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -69,6 +71,42 @@ export default function Landing() {
       return;
     }
   }
+
+  // Submit exit intent reason directly to the form (only the reason field)
+  const submitExitReason = async (reason: string) => {
+    const GOOGLE_FORM_ID = '1FAIpQLSf7yq2a83f-boZE0Yag2JBm593EwAkRS3AEhB4fOXJLBFxnug'
+    const GOOGLE_FORM_URL = `https://docs.google.com/forms/d/e/${GOOGLE_FORM_ID}/formResponse`
+
+    const fields = {
+      'entry.1950214871': reason || '',
+      'submit': 'Submit',
+    }
+
+    try {
+      const formData = new FormData();
+      Object.entries(fields).forEach(([k, v]) => formData.append(k, v as string));
+      await fetch(GOOGLE_FORM_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: formData,
+      });
+    } catch {
+      submitViaHiddenForm(GOOGLE_FORM_URL, fields);
+    }
+  }
+
+  // Detect exit intent (desktop): open modal once per session
+  useEffect(() => {
+    const shownKey = 'exit_intent_shown'
+    const handler = (e: MouseEvent) => {
+      if ((e.clientY || 0) <= 0 && !sessionStorage.getItem(shownKey)) {
+        sessionStorage.setItem(shownKey, '1')
+        setIsExitModalOpen(true)
+      }
+    }
+    document.addEventListener('mouseleave', handler)
+    return () => document.removeEventListener('mouseleave', handler)
+  }, [])
 
   return (
     <>
@@ -228,6 +266,46 @@ export default function Landing() {
         isOpen={isPolicyModalOpen} 
         onClose={() => setIsPolicyModalOpen(false)} 
       />
+
+      {/* EXIT-INTENT MODAL */}
+      {isExitModalOpen && (
+        <div className="modal-overlay" onClick={() => setIsExitModalOpen(false)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header">
+              <h2>Vì sao bạn chưa đăng ký?</h2>
+              <button className="modal-close" onClick={() => setIsExitModalOpen(false)}>×</button>
+            </div>
+            <div className="modal-body">
+              <p style={{ marginTop: 0, marginBottom: 12, color: '#374151' }}>
+                Cho chúng tôi biết lý do để cải thiện trải nghiệm của bạn.
+              </p>
+              <textarea
+                className="input"
+                placeholder="Ví dụ: Tôi muốn xem thêm giáo viên, giá chưa phù hợp..."
+                value={exitReason}
+                onChange={(e) => setExitReason(e.target.value)}
+                style={{ width: '100%', minHeight: 96, padding: 12, resize: 'vertical' }}
+              />
+              <div style={{ display: 'flex', gap: 10, justifyContent: 'flex-end', marginTop: 12 }}>
+                <button className="btn btn--ghost" onClick={() => setIsExitModalOpen(false)}>Bỏ qua</button>
+                <button
+                  className="btn"
+                  onClick={async () => {
+                    try {
+                      await submitExitReason(exitReason)
+                      toast.success('Cảm ơn bạn đã góp ý!')
+                    } catch {}
+                    setIsExitModalOpen(false)
+                    setExitReason('')
+                  }}
+                >
+                  Gửi
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* TOAST NOTIFICATIONS */}
       <Toaster
