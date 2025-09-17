@@ -272,19 +272,19 @@ export default function Landing() {
         <div className="modal-overlay" onClick={() => setIsExitModalOpen(false)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <div className="modal-header">
-              <h2>Vì sao bạn chưa đăng ký?</h2>
+              <h2>Giúp chúng tớ cải thiện</h2>
               <button className="modal-close" onClick={() => setIsExitModalOpen(false)}>×</button>
             </div>
             <div className="modal-body">
               <p style={{ marginTop: 0, marginBottom: 12, color: '#374151' }}>
-                Cho chúng tôi biết lý do để cải thiện trải nghiệm của bạn.
+                Bạn ơi đừng vội rời đi hãy chia sẽ cho chúng tớ còn điều gì khiến bạn không thể đăng kí khóa học nhé?.
               </p>
               <textarea
                 className="input"
                 placeholder="Ví dụ: Tôi muốn xem thêm giáo viên, giá chưa phù hợp..."
                 value={exitReason}
                 onChange={(e) => setExitReason(e.target.value)}
-                style={{ width: '100%', minHeight: 96, padding: 12, resize: 'vertical' }}
+                style={{ width: '100%', maxWidth: '100%', boxSizing: 'border-box', display: 'block', minHeight: 96, padding: 12, resize: 'vertical', overflowWrap: 'anywhere' }}
               />
               <div style={{ display: 'flex', gap: 10, justifyContent: 'flex-end', marginTop: 12 }}>
                 <button className="btn btn--ghost" onClick={() => setIsExitModalOpen(false)}>Bỏ qua</button>
