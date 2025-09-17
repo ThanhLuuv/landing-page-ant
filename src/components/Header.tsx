@@ -33,11 +33,11 @@ export default function Header({ onCtaClick }: HeaderProps) {
         {/* background blobs */}
         <div className="blob blob--a" aria-hidden="true" />
         <div className="blob blob--b" aria-hidden="true" />
+        <h1 className="text-center hero-title">
+          Học tiếng Anh 1-1 theo nhu cầu, <br className="mobile-br" /><span className="text-accent">từ 80k/buổi</span>
+        </h1>
         <div className="container hero-grid">
           <div className="hero-copy">
-            <h1>
-              Học tiếng Anh 1-1 theo<br /> nhu cầu, <span className="text-accent">từ 80k/buổi</span>
-            </h1>
             <p className="lead">
               Chọn giáo viên phù hợp, đặt lịch nhanh, 
             </p>
@@ -90,7 +90,7 @@ export default function Header({ onCtaClick }: HeaderProps) {
                 <div className="demo-banner__head">Gói 1-1 theo buổi</div>
                 <div className="demo-banner__body">
                   <div>
-                    <div className="price">từ 80k/buổi</div>
+                    <div className="price">80k/buổi</div>
                     <div className="caption">Đặt lịch linh hoạt • Học trước từng buổi</div>
                   </div>
                   <a className="btn" href="#dangky" onClick={(e) => { e.preventDefault(); onCtaClick?.() }}>Chọn gói này</a>

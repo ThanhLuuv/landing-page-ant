@@ -57,6 +57,13 @@ html, body {
 .eyebrow{display:inline-block; background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.25); color:#fff; padding:6px 10px; border-radius:999px; font-size:13px; letter-spacing:.3px}
 h1{font-size:42px; line-height:1.15; margin:14px 0 16px; white-space: nowrap}
 @media (max-width: 520px){h1{font-size:34px}}
+/* Hero title custom padding and wrapping */
+.hero-title{padding:0 20px; white-space:normal}
+.mobile-br{display:none}
+@media (max-width: 640px){
+  .hero-title{padding:0 12px}
+  .mobile-br{display:inline}
+}
 .lead{font-size:17px; color:#f0f5ff; max-width:58ch}
 
 .proof{display:flex; gap:12px; margin:18px 0}
