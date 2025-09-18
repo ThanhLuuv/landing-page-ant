@@ -59,6 +59,7 @@ h1{font-size:42px; line-height:1.15; margin:14px 0 16px; white-space: nowrap}
 @media (max-width: 520px){h1{font-size:34px}}
 /* Hero title custom padding and wrapping */
 .hero-title{padding:0 20px; white-space:normal}
+.hero-title--fullwidth{grid-column:1/-1; text-align:left; margin-bottom:20px}
 .mobile-br{display:none}
 @media (max-width: 640px){
   .hero-title{padding:0 12px}

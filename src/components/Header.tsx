@@ -33,10 +33,10 @@ export default function Header({ onCtaClick }: HeaderProps) {
         {/* background blobs */}
         <div className="blob blob--a" aria-hidden="true" />
         <div className="blob blob--b" aria-hidden="true" />
-        <h1 className="text-center hero-title">
-          Học tiếng Anh 1-1 theo nhu cầu, <br className="mobile-br" /><span className="text-accent">từ 80k/buổi</span>
-        </h1>
         <div className="container hero-grid">
+          <h1 className="hero-title--fullwidth">
+            Học tiếng Anh 1-1 theo nhu cầu, <br className="mobile-br" /><span className="text-accent">từ 80k/buổi</span>
+          </h1>
           <div className="hero-copy">
             <p className="lead">
               Chọn giáo viên phù hợp, đặt lịch nhanh, 
