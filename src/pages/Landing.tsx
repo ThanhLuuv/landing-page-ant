@@ -108,6 +108,38 @@ export default function Landing() {
     return () => document.removeEventListener('mouseleave', handler)
   }, [])
 
+  window.addEventListener("popstate", function (event) {
+    // Hiển thị modal tuỳ chỉnh
+    const confirmLeave = confirm("Dữ liệu chưa lưu, bạn có chắc chắn muốn rời trang?");
+    if (!confirmLeave) {
+      // Đẩy lại state để chặn việc back
+      history.pushState(null, "", window.location.href);
+    }
+  });
+  
+  // Cần pushState ban đầu để kiểm soát lịch sử
+  history.pushState(null, "", window.location.href);
+  
+
+  // Detect page unload/close: show modal when user tries to leave
+  useEffect(() => {
+    const shownKey = 'exit_intent_shown'
+    
+    const beforeUnloadHandler = (e: BeforeUnloadEvent) => {
+      if (!sessionStorage.getItem(shownKey)) {
+        sessionStorage.setItem(shownKey, '1')
+        setIsExitModalOpen(true)
+        // Prevent immediate navigation
+        e.preventDefault()
+        e.returnValue = ''
+        return ''
+      }
+    }
+
+    window.addEventListener('beforeunload', beforeUnloadHandler)
+    return () => window.removeEventListener('beforeunload', beforeUnloadHandler)
+  }, [])
+
   return (
     <>
       <Header onCtaClick={() => {
